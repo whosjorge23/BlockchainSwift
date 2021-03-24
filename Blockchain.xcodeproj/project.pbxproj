@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED9B1047260BB6E7009A7A72 /* Classes.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9B1046260BB6E7009A7A72 /* Classes.swift */; };
+		ED9B104B260BC1E3009A7A72 /* SwiftHEXColors in Frameworks */ = {isa = PBXBuildFile; productRef = ED9B104A260BC1E3009A7A72 /* SwiftHEXColors */; };
 		EDC2E30E2608EB9100EF09FC /* BlockchainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC2E30D2608EB9100EF09FC /* BlockchainApp.swift */; };
 		EDC2E3102608EB9100EF09FC /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDC2E30F2608EB9100EF09FC /* ContentView.swift */; };
 		EDC2E3122608EB9400EF09FC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EDC2E3112608EB9400EF09FC /* Assets.xcassets */; };
@@ -14,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED9B1046260BB6E7009A7A72 /* Classes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Classes.swift; sourceTree = "<group>"; };
 		EDC2E30A2608EB9100EF09FC /* Blockchain.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blockchain.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDC2E30D2608EB9100EF09FC /* BlockchainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlockchainApp.swift; sourceTree = "<group>"; };
 		EDC2E30F2608EB9100EF09FC /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -27,6 +30,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED9B104B260BC1E3009A7A72 /* SwiftHEXColors in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +58,7 @@
 			children = (
 				EDC2E30D2608EB9100EF09FC /* BlockchainApp.swift */,
 				EDC2E30F2608EB9100EF09FC /* ContentView.swift */,
+				ED9B1046260BB6E7009A7A72 /* Classes.swift */,
 				EDC2E3112608EB9400EF09FC /* Assets.xcassets */,
 				EDC2E3162608EB9400EF09FC /* Info.plist */,
 				EDC2E3132608EB9400EF09FC /* Preview Content */,
@@ -85,6 +90,9 @@
 			dependencies = (
 			);
 			name = Blockchain;
+			packageProductDependencies = (
+				ED9B104A260BC1E3009A7A72 /* SwiftHEXColors */,
+			);
 			productName = Blockchain;
 			productReference = EDC2E30A2608EB9100EF09FC /* Blockchain.app */;
 			productType = "com.apple.product-type.application";
@@ -112,6 +120,9 @@
 				Base,
 			);
 			mainGroup = EDC2E3012608EB9100EF09FC;
+			packageReferences = (
+				ED9B1049260BC1E3009A7A72 /* XCRemoteSwiftPackageReference "SwiftHEXColors" */,
+			);
 			productRefGroup = EDC2E30B2608EB9100EF09FC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -140,6 +151,7 @@
 			files = (
 				EDC2E3102608EB9100EF09FC /* ContentView.swift in Sources */,
 				EDC2E30E2608EB9100EF09FC /* BlockchainApp.swift in Sources */,
+				ED9B1047260BB6E7009A7A72 /* Classes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +340,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		ED9B1049260BC1E3009A7A72 /* XCRemoteSwiftPackageReference "SwiftHEXColors" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/thii/SwiftHEXColors.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		ED9B104A260BC1E3009A7A72 /* SwiftHEXColors */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ED9B1049260BC1E3009A7A72 /* XCRemoteSwiftPackageReference "SwiftHEXColors" */;
+			productName = SwiftHEXColors;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EDC2E3022608EB9100EF09FC /* Project object */;
 }

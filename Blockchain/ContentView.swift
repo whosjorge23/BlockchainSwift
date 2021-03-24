@@ -6,15 +6,20 @@
 //
 
 import SwiftUI
+import SwiftHEXColors
 
 struct ContentView: View {
+    
     @State var text: String = ""
     @State var from: String = "The School"
     @State var to: String = ""
     @State var certificate: String = ""
-    @State var arrayBC = ["Genesis Block"]
+    //@State var arrayBC = ["Genesis Block"]
+    @State var genesisBlock = false
+    @State var data = false
     
     var body: some View {
+        
         VStack(alignment: .center, spacing: 10, content: {
             Image("18514975")
                 .resizable()
@@ -37,36 +42,58 @@ struct ContentView: View {
                 .padding(.top, 5)
             
             Button(action: {
+                if genesisBlock == false {
+                    englishCetificate.createGenesisBlock(data: "Genesis Block")
+                    genesisBlock = true
+                }
                 text = "From: \(from), To: \(to), Certificate: \(certificate)"
                 
                 if(!certificate.isEmpty && !from.isEmpty && !to.isEmpty) {
-                    arrayBC.append(text)
+                    //arrayBC.append(text)
                     
+                    englishCetificate.addBlock(data: text)
                     from = ""
                     to = ""
                     certificate = ""
+                    
                 }
                 
+                data.toggle()
+                
             }, label: {
-                Text("Add Block to BlockChain")
-                    .foregroundColor(.green)
-                    .font(.title3)
-                    .padding()
-                    .background(
-                        RoundedRectangle(cornerRadius: 12)
-                            .foregroundColor(.black)
-                    )
+                if data == false {
+                    Text("Add Block to BlockChain")
+                        .foregroundColor(.white)
+                        .font(.title3)
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 12)
+                                .foregroundColor(Color(UIColor(hexString: "559df4")!))
+                        )
+                }else {
+                    Text("Add Block to BlockChain")
+                        .foregroundColor(.green)
+                        .font(.title3)
+                        .padding()
+                        .background(
+                            RoundedRectangle(cornerRadius: 12)
+                                .foregroundColor(.black)
+                        )
+                }
+                
             })
             ScrollView(.vertical, showsIndicators: false, content: {
-                ForEach(0 ..< arrayBC.count, id: \.self) { i in
-                    Text("\(arrayBC[i])")
+                ForEach(0 ..< englishCetificate.chain.count, id: \.self) { i in
+//                    Text("\(arrayBC[i])")
+//                        .padding(.top)
+                    Text("\(englishCetificate.chain[i].data)\n\(englishCetificate.chain[i].prevHash)\n\(englishCetificate.chain[i].hash)")
                         .padding(.top)
                 }
+                
             })
             
-            
         })
-        .background(Color.gray)
+        .background(Color(UIColor(hexString: "#83BAFE")!))
         .edgesIgnoringSafeArea(.all)
     }
 }
