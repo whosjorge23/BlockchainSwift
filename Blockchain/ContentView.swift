@@ -18,6 +18,9 @@ struct ContentView: View {
     @State var genesisBlock = false
     @State var data = false
     
+    @State var isChainValid = true
+    @State var invalidHash = ""
+    
     var body: some View {
         
         VStack(alignment: .center, spacing: 10, content: {
@@ -30,16 +33,19 @@ struct ContentView: View {
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding([.leading,.trailing])
                 .padding(.top, 5)
-            
+                .foregroundColor(Color(UIColor(hexString: "#83BAFE")!))
+                
             TextField("Type To New Block", text: $to)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding([.leading,.trailing])
                 .padding(.top, 5)
+                .foregroundColor(Color(UIColor(hexString: "#83BAFE")!))
             
             TextField("Type Certificate New Block", text: $certificate)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding([.leading,.trailing,.bottom])
                 .padding(.top, 5)
+                .foregroundColor(Color(UIColor(hexString: "#83BAFE")!))
             
             Button(action: {
                 if genesisBlock == false {
@@ -59,11 +65,12 @@ struct ContentView: View {
                 }
                 
                 data.toggle()
-                
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+
             }, label: {
                 if data == false {
                     Text("Add Block to BlockChain")
-                        .foregroundColor(.white)
+                        .foregroundColor(Color(UIColor(hexString: "ECF0F1")!))
                         .font(.title3)
                         .padding()
                         .background(
@@ -72,12 +79,12 @@ struct ContentView: View {
                         )
                 }else {
                     Text("Add Block to BlockChain")
-                        .foregroundColor(.green)
+                        .foregroundColor(Color(UIColor(hexString: "ECF0F1")!))
                         .font(.title3)
                         .padding()
                         .background(
                             RoundedRectangle(cornerRadius: 12)
-                                .foregroundColor(.black)
+                                .foregroundColor(Color(UIColor(hexString: "559df4")!))
                         )
                 }
                 
@@ -87,7 +94,16 @@ struct ContentView: View {
 //                    Text("\(arrayBC[i])")
 //                        .padding(.top)
                     Text("\(englishCetificate.chain[i].data)\n\(englishCetificate.chain[i].prevHash)\n\(englishCetificate.chain[i].hash)")
+                        .multilineTextAlignment(.leading)
                         .padding(.top)
+                        .foregroundColor(Color(UIColor(hexString: "ECF0F1")!))
+                        .padding([.leading,.trailing], 20.0)
+                    
+//                    ForEach(1 ..< englishCetificate.chain.count-1) { i in
+//                        if englishCetificate.chain[i].hash != englishCetificate.chain[i-1].prevHash {
+//                        Text("Block Not Valid")
+//                        }
+//                    }
                 }
                 
             })
