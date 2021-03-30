@@ -27,7 +27,8 @@ struct ContentView: View {
             Image("18514975")
                 .resizable()
                 .scaledToFit()
-                .frame(width: 200, height: 200, alignment: .center)
+//                .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
+                .frame(width: 250, height: 250, alignment: .center)
             
             TextField("Type From New Block", text: $from)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
@@ -117,5 +118,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+            
     }
 }
