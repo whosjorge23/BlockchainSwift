@@ -11,7 +11,7 @@ import SwiftHEXColors
 struct ContentView: View {
     
     @State var text: String = ""
-    @State var from: String = "The School"
+    @State var from: String = " The School"
     @State var to: String = ""
     @State var certificate: String = ""
     //@State var arrayBC = ["Genesis Block"]
@@ -30,23 +30,36 @@ struct ContentView: View {
 //                .padding(.top, UIApplication.shared.windows.first?.safeAreaInsets.top)
                 .frame(width: 250, height: 250, alignment: .center)
             
-            TextField("Type From New Block", text: $from)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+            TextField(" Type From New Block", text: $from)
+                .frame(width: .infinity, height: 35, alignment: .center)
+                .background(Color(UIColor(hexString: "#559df4")!))
+                .cornerRadius(8)
+//                .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding([.leading,.trailing])
                 .padding(.top, 5)
-                .foregroundColor(Color(UIColor(hexString: "#83BAFE")!))
+                //.foregroundColor(Color(UIColor(hexString: "#83BAFE")!))
+                .foregroundColor(Color(UIColor(hexString: "#ffffff")!))
                 
-            TextField("Type To New Block", text: $to)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+                
+            TextField(" Type To New Block", text: $to)
+                .frame(width: .infinity, height: 35, alignment: .center)
+                .background(Color(UIColor(hexString: "#559df4")!))
+                .cornerRadius(8)
+//                .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding([.leading,.trailing])
                 .padding(.top, 5)
-                .foregroundColor(Color(UIColor(hexString: "#83BAFE")!))
+//                .foregroundColor(Color(UIColor(hexString: "#83BAFE")!))
+                .foregroundColor(Color(UIColor(hexString: "#ffffff")!))
             
-            TextField("Type Certificate New Block", text: $certificate)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
+            TextField(" Type Certificate New Block", text: $certificate)
+                .frame(width: .infinity, height: 35, alignment: .center)
+                .background(Color(UIColor(hexString: "#559df4")!))
+                .cornerRadius(8)
+//                .textFieldStyle(RoundedBorderTextFieldStyle())
                 .padding([.leading,.trailing,.bottom])
                 .padding(.top, 5)
-                .foregroundColor(Color(UIColor(hexString: "#83BAFE")!))
+//                .foregroundColor(Color(UIColor(hexString: "#83BAFE")!))
+                .foregroundColor(Color(UIColor(hexString: "#ffffff")!))
             
             Button(action: {
                 if genesisBlock == false {

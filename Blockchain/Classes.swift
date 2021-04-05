@@ -52,3 +52,15 @@ class BlockChain {
 // CREATE CHAIN
 
 let englishCetificate = BlockChain()
+
+//var isChainValid = true
+//var invalidHash = ""
+
+//for i in 1...englishCetificate.chain.count-1 {
+//    
+//    if englishCetificate.chain[i].prevHash != englishCetificate.chain[i-1].hash {
+//        
+//        isChainValid = false
+//        invalidHash = "invalidHash: \(englishCetificate.chain[i-1].hash)"
+//    }
+//}
